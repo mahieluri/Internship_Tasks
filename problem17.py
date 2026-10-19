@@ -1,17 +1,14 @@
 
-# Problem 17: Finding the Percentage
-# HackerRank: https://www.hackerrank.com/challenges/finding-the-percentage/problem
-
+a = set(map(int, input().split()))
 n = int(input())
-students = {}
 
-for i in range(n):
-    data = input().split()
-    name = data[0]
-    marks = list(map(float, data[1:]))
-    students[name] = marks
+result = True
 
-query_name = input()
-average = sum(students[query_name]) / len(students[query_name])
+for _ in range(n):
+    b = set(map(int, input().split()))
 
-print(f"{average:.2f}")
+    if not a > b:
+        result = False
+        break
+
+print(result)

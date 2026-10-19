@@ -1,21 +1,9 @@
-
-# Problem 19: Collections.Counter()
-# HackerRank: https://www.hackerrank.com/challenges/collections-counter/problem
-
 from collections import Counter
 
-x = int(input())
-sizes = list(map(int, input().split()))
-shoe_counts = Counter(sizes)
+s = input()
+counts = Counter(s)
 
-n = int(input())
-earnings = 0
+result = sorted(counts.items(), key=lambda x: (-x[1], x[0]))
 
-for i in range(n):
-    size, price = map(int, input().split())
-
-    if shoe_counts[size] > 0:
-        earnings += price
-        shoe_counts[size] -= 1
-
-print(earnings)
+for character, count in result[:3]:
+    print(character, count)

@@ -1,16 +1,8 @@
 
-# Problem 15: Word Order
-# HackerRank: https://www.hackerrank.com/challenges/word-order/problem
-
 n = int(input())
-word_count = {}
+english = set(map(int, input().split()))
 
-for i in range(n):
-    word = input().strip()
-    if word in word_count:
-        word_count[word] += 1
-    else:
-        word_count[word] = 1
+b = int(input())
+french = set(map(int, input().split()))
 
-print(len(word_count))
-print(*word_count.values())
+print(len(english.difference(french)))

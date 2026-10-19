@@ -1,14 +1,10 @@
 
-# Problem 10: Find a String
-# HackerRank: https://www.hackerrank.com/challenges/find-a-string/problem
+n, m = map(int, input().split())
 
-s = input().strip()
-sub = input().strip()
+for i in range(1, n, 2):
+    print((".|." * i).center(m, "-"))
 
-count = 0
+print("WELCOME".center(m, "-"))
 
-for i in range(len(s) - len(sub) + 1):
-    if s[i:i + len(sub)] == sub:
-        count += 1
-
-print(count)
+for i in range(n - 2, 0, -2):
+    print((".|." * i).center(m, "-"))

@@ -1,24 +1,19 @@
 
-# Problem 18: Lists
-# HackerRank: https://www.hackerrank.com/challenges/python-lists/problem
-
 n = int(input())
-L = []
+a = set(map(int, input().split()))
+number_of_operations = int(input())
 
-for i in range(n):
-    command = input().split()
+for _ in range(number_of_operations):
+    operation, size = input().split()
+    b = set(map(int, input().split()))
 
-    if command[0] == "insert":
-        L.insert(int(command[1]), int(command[2]))
-    elif command[0] == "print":
-        print(L)
-    elif command[0] == "remove":
-        L.remove(int(command[1]))
-    elif command[0] == "append":
-        L.append(int(command[1]))
-    elif command[0] == "sort":
-        L.sort()
-    elif command[0] == "pop":
-        L.pop()
-    elif command[0] == "reverse":
-        L.reverse()
+    if operation == "intersection_update":
+        a.intersection_update(b)
+    elif operation == "update":
+        a.update(b)
+    elif operation == "symmetric_difference_update":
+        a.symmetric_difference_update(b)
+    elif operation == "difference_update":
+        a.difference_update(b)
+
+print(sum(a))

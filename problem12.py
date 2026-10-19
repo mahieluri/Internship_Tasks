@@ -1,11 +1,16 @@
 
-# Problem 12: Introduction to Sets
-# HackerRank: https://www.hackerrank.com/challenges/py-introduction-to-sets/problem
-
 n = int(input())
-heights = list(map(int, input().split()))
+s = set(map(int, input().split()))
+number_of_commands = int(input())
 
-unique_heights = set(heights)
-average = sum(unique_heights) / len(unique_heights)
+for _ in range(number_of_commands):
+    command = input().split()
 
-print(round(average, 3))
+    if command[0] == "pop":
+        s.pop()
+    elif command[0] == "remove":
+        s.remove(int(command[1]))
+    elif command[0] == "discard":
+        s.discard(int(command[1]))
+
+print(sum(s))

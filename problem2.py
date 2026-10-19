@@ -1,7 +1,4 @@
 
-# Problem 2: Arithmetic Operators
-# HackerRank: https://www.hackerrank.com/challenges/python-arithmetic-operators/problem
-
 a = int(input())
 b = int(input())
 

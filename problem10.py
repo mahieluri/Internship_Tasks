@@ -1,10 +1,9 @@
+# Problem Name: CamelCase
+# HackerRank Link: https://www.hackerrank.com/challenges/camelcase/problem
 
-n, m = map(int, input().split())
+def camelcase(s):
+    return sum(1 for c in s if c.isupper()) + 1
 
-for i in range(1, n, 2):
-    print((".|." * i).center(m, "-"))
-
-print("WELCOME".center(m, "-"))
-
-for i in range(n - 2, 0, -2):
-    print((".|." * i).center(m, "-"))
+if __name__ == '__main__':
+    s = input().strip()
+    print(camelcase(s))

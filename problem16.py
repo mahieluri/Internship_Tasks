@@ -1,11 +1,19 @@
+# Problem Name: Caesar Cipher
+# HackerRank Link: https://www.hackerrank.com/challenges/caesar-cipher-1/problem
 
-t = int(input())
+def caesarCipher(s, k):
+    result = []
+    for char in s:
+        if char.isalpha():
+            start = ord('A') if char.isupper() else ord('a')
+            shifted = chr(start + (ord(char) - start + k) % 26)
+            result.append(shifted)
+        else:
+            result.append(char)
+    return "".join(result)
 
-for _ in range(t):
+if __name__ == '__main__':
     n = int(input())
-    a = set(map(int, input().split()))
-
-    m = int(input())
-    b = set(map(int, input().split()))
-
-    print(a.issubset(b))
+    s = input()
+    k = int(input())
+    print(caesarCipher(s, k))

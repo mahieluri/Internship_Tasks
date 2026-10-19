@@ -1,15 +1,17 @@
+# Problem Name: Alphabet Rangoli
+# HackerRank Link: https://www.hackerrank.com/challenges/alphabet-rangoli/problem
 
-x = int(input())
-y = int(input())
-z = int(input())
-n = int(input())
+import string
 
-result = [
-    [i, j, k]
-    for i in range(x + 1)
-    for j in range(y + 1)
-    for k in range(z + 1)
-    if i + j + k != n
-]
+def print_rangoli(size):
+    alphabet = string.ascii_lowercase
+    lines = []
+    for i in range(size):
+        s = "-".join(alphabet[i:size])
+        line = (s[::-1] + s[1:]).center(4 * size - 3, "-")
+        lines.append(line)
+    print("\n".join(lines[::-1] + lines[1:]))
 
-print(result)
+if __name__ == '__main__':
+    n = int(input())
+    print_rangoli(n)

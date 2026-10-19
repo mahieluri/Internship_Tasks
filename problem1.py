@@ -1,11 +1,9 @@
+# Problem Name: Set .symmetric_difference() Operation
+# HackerRank Link: https://www.hackerrank.com/challenges/py-set-symmetric-difference-operation/problem
 
 n = int(input())
+set_n = set(map(int, input().split()))
+m = int(input())
+set_m = set(map(int, input().split()))
 
-if n % 2 != 0:
-    print("Weird")
-elif 2 <= n <= 5:
-    print("Not Weird")
-elif 6 <= n <= 20:
-    print("Weird")
-else:
-    print("Not Weird")
+print(len(set_n.symmetric_difference(set_m)))

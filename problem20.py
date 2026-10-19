@@ -1,11 +1,15 @@
-import re
+# Problem Name: Super Reduced String
+# HackerRank Link: https://www.hackerrank.com/challenges/reduced-string/problem
 
-n = int(input())
+def superReducedString(s):
+    stack = []
+    for char in s:
+        if stack and stack[-1] == char:
+            stack.pop()
+        else:
+            stack.append(char)
+    return "".join(stack) if stack else "Empty String"
 
-for _ in range(n):
-    phone = input()
-
-    if re.fullmatch(r"[789]\d{9}", phone):
-        print("YES")
-    else:
-        print("NO")
+if __name__ == '__main__':
+    s = input().strip()
+    print(superReducedString(s))

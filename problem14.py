@@ -1,8 +1,19 @@
+# Problem Name: Anagram
+# HackerRank Link: https://www.hackerrank.com/challenges/anagram/problem
 
-n = int(input())
-english = set(map(int, input().split()))
+from collections import Counter
 
-b = int(input())
-french = set(map(int, input().split()))
+def anagram(s):
+    if len(s) % 2 != 0:
+        return -1
+    mid = len(s) // 2
+    s1, s2 = s[:mid], s[mid:]
+    c1, c2 = Counter(s1), Counter(s2)
+    
+    diff = c1 - c2
+    return sum(diff.values())
 
-print(len(english.intersection(french)))
+if __name__ == '__main__':
+    q = int(input())
+    for _ in range(q):
+        print(anagram(input().strip()))

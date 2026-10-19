@@ -1,21 +1,12 @@
+# Problem Name: Two Strings
+# HackerRank Link: https://www.hackerrank.com/challenges/two-strings/problem
 
-def print_formatted(number):
-    width = len(format(number, "b"))
+def twoStrings(s1, s2):
+    return "YES" if set(s1) & set(s2) else "NO"
 
-    for i in range(1, number + 1):
-        decimal = str(i)
-        octal = format(i, "o")
-        hexadecimal = format(i, "X")
-        binary = format(i, "b")
-
-        print(
-            decimal.rjust(width),
-            octal.rjust(width),
-            hexadecimal.rjust(width),
-            binary.rjust(width)
-        )
-
-
-if __name__ == "__main__":
-    n = int(input())
-    print_formatted(n)
+if __name__ == '__main__':
+    q = int(input())
+    for _ in range(q):
+        s1 = input().strip()
+        s2 = input().strip()
+        print(twoStrings(s1, s2))

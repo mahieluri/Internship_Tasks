@@ -1,16 +1,16 @@
+# Problem Name: Making Anagrams
+# HackerRank Link: https://www.hackerrank.com/challenges/making-anagrams/problem
 
-n = int(input())
-s = set(map(int, input().split()))
-number_of_commands = int(input())
+from collections import Counter
 
-for _ in range(number_of_commands):
-    command = input().split()
+def makingAnagrams(s1, s2):
+    c1 = Counter(s1)
+    c2 = Counter(s2)
+    diff = c1 - c2
+    diff2 = c2 - c1
+    return sum(diff.values()) + sum(diff2.values())
 
-    if command[0] == "pop":
-        s.pop()
-    elif command[0] == "remove":
-        s.remove(int(command[1]))
-    elif command[0] == "discard":
-        s.discard(int(command[1]))
-
-print(sum(s))
+if __name__ == '__main__':
+    s1 = input().strip()
+    s2 = input().strip()
+    print(makingAnagrams(s1, s2))

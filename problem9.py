@@ -1,5 +1,10 @@
+# Problem Name: Beautiful Binary String
+# HackerRank Link: https://www.hackerrank.com/challenges/beautiful-binary-string/problem
 
-first_name = input()
-last_name = input()
+def beautifulBinaryString(b):
+    return b.count("010")
 
-print(f"Hello {first_name} {last_name}! You just delved into python.")
+if __name__ == '__main__':
+    n = int(input())
+    b = input().strip()
+    print(beautifulBinaryString(b))

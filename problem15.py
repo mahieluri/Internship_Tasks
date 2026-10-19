@@ -1,8 +1,13 @@
+# Problem Name: Game of Thrones - I
+# HackerRank Link: https://www.hackerrank.com/challenges/game-of-thrones/problem
 
-n = int(input())
-english = set(map(int, input().split()))
+from collections import Counter
 
-b = int(input())
-french = set(map(int, input().split()))
+def gameOfThrones(s):
+    counts = Counter(s)
+    odd_count = sum(1 for count in counts.values() if count % 2 != 0)
+    return "YES" if odd_count <= 1 else "NO"
 
-print(len(english.difference(french)))
+if __name__ == '__main__':
+    s = input().strip()
+    print(gameOfThrones(s))

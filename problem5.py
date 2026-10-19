@@ -1,14 +1,14 @@
+# Problem Name: Alternating Characters
+# HackerRank Link: https://www.hackerrank.com/challenges/alternating-characters/problem
 
-def is_leap(year):
-    if year % 400 == 0:
-        return True
-    elif year % 100 == 0:
-        return False
-    elif year % 4 == 0:
-        return True
-    else:
-        return False
+def alternatingCharacters(s):
+    deletions = 0
+    for i in range(len(s) - 1):
+        if s[i] == s[i+1]:
+            deletions += 1
+    return deletions
 
-
-year = int(input())
-print(is_leap(year))
+if __name__ == '__main__':
+    q = int(input())
+    for _ in range(q):
+        print(alternatingCharacters(input().strip()))
